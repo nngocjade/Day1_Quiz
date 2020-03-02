@@ -1,0 +1,171 @@
+Day 1 Quiz!
+
+Please use any and all resources at your disposal to complete this quiz. That means, the internet, the CodingNomads platform, the labs, and/or anything else. Take as much time as you need. If you finish before others please feel free to take a break, do some studying, send me any questions on Slack etc.
+
+Section 1 - Fundamentals:
+
+1) What defines "a block" of code?
+
+2) What is "variable scope"?
+
+3) What defines "variable scope"?
+
+4) What are Java's primitive data types? Please list them and briefly explain them.
+
+5) What are Java's arithmetic operators? Please demonstrate all of them.
+
+6) What are Java's relational operators? Please demonstrate all of them.
+
+7) What are Java logical operators? Please demonstrate all of them?
+
+8) What is a conditional statement in Java? Please show an example.
+
+9) What types of loops do we have in Java? Please demonstrate each of them.
+
+10) What do the keywords "continue", "break", and "return" do?
+
+11) What is a Switch Statement? Please demonstrate.
+
+
+Section 2 - Introduction to Data Structures:
+
+12) What is an Array?
+
+13) What is the difference between the length() of an Array and the final index of an Array?
+
+14) How do we instantiate an Array of size 7? Please demonstrate.
+
+15) Please write a for loop that will populate the Array you created above with the numbers two through twelve (start with 2 and increment by 2).
+
+16) Please write a for-each loop that will print each element in the Array above.
+
+17) How do we declare a two-dimensional Array with a width of 7 and a height of 7? Please demonstrate?
+
+18) Please demonstrate how to populate the 2D array above using a nest for loop?
+
+19) Please demonstrate how to print each element in the 2D array above using nested for-each loop.
+
+20) What is an ArrayList? 
+
+21) What makes an ArrayList different than an Array?
+
+22) What are a few useful methods that are available to us when using an ArrayList?
+
+
+Section 3 - Object-Oriented Programming (OOP):
+
+23) What is OOP?
+
+24) What are the primary tenants/principles of OOP?
+
+25) Please explain the tenants/principles you listed in the previous question.
+
+26) What is a constructor?
+
+27) When, specifically, is a constructor invoked?
+
+28) How do we create a new object in Java?
+
+29) What is Object Composition? Please give a simple demo below.
+
+30) What are the access modifiers in Java? Please list them and briefly describe them.
+
+31) What is the difference between "this" and "super"?
+
+32) What is an "abstract" class?
+
+33) What is the difference between a static variable and a non-static variable?
+
+34) What is the difference between a static method and a non-static method?
+
+35) What do we need in order to be able to call a non-static method?
+
+36) How do we call a static method that is in another class?
+
+37) What does it mean to "overload" a method?
+
+38) What does it mean to "override" a method?
+
+
+Section 4 - Exception Handling:
+
+39) What is exception handling all about?
+
+40) Please demonstrate a try/catch/finally statement below.
+
+41) How do we create a custom exception? Please demonstrate.
+
+42) What does it mean to "throw" an exception?
+
+43) What is the difference between the keywords "throw" and "throws"?
+
+44) When catching multiple exceptions, why must we keep the "exception hierarchy" in mind?
+
+45) Can we have a "try" without a "catch"?
+
+46) Can we have a "try/catch" without a "finally"?
+
+
+Section 5 - Input/Output:
+
+47) What is a Byte Stream?
+
+48) What is a Character Stream?
+
+49) What is a very quickly clue that tells us whether we're looking at a Byte Stream or a Character Stream?
+
+50) What is the difference between a Buffered Byte Stream and a traditional Byte Stream?
+
+51) What is the difference between a Buffered Character Stream and a traditional Character Stream?
+
+52) Please demonstrate how to create a Byte Stream and a Character Stream below. Both of these Streams should demonstrate how to read a file and print the contents to the console. (This is just a demonstration.)
+
+
+Section 6 - MultiThreading:
+
+53) What is multithreading?
+
+54) What are the 2 ways we can create new threads in Java?
+
+55) Which method of creating a new thread do we typically prefer? Why?
+
+56) What is the one method you must implement when creating a new thread?
+
+57) What does the join() method do?
+
+58) What does the synchronized keyword do?
+
+
+Section 7 - Generics:
+
+59) Why do we use Generics?
+
+60) Please demonstrate a simple Generic Class definition.
+
+60) Please demonstrate a simple Generic Method definition.
+
+61) What does "bounded types" mean?
+
+62) Please write a simple bounded Generic Method named sum() that takes in two parameters. These parameters can be ANY type of Number, but they must be a Number. This method will return a double which is the sum of the two method parameters.
+
+62) What is an example of a Generic Class that we've already been using a bit in the prep course?
+
+
+Section 8 - Enumerations:
+
+63) What is an Enumeration?
+
+64) When do we use Enumerations?
+
+65) Please demonstrate a simple Enumeration below.
+
+Hoorayyyy! You're done! 
+
+Bonus Section!
+
+Please write a method that will reverse the (int) elements inside an array. This method takes in an int[] array as an argument and reverse the elements in place. You cannot create a new array and copy elements from one array to the other, you must reverse the elements in place inside the original array. Once reversed, return the array back to the caller.
+
+Please create a simple Rock-Paper_Scissors game that you can play on the console against the commputer. The computer must randomly choose it's play, and the user gets to manually choose their play. Best 2 out of 3 wins.
+
+
+Hooray!! You're extra extra done!
