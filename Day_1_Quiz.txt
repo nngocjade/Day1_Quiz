@@ -59,6 +59,14 @@ double - 64 bits or 8 bytes, stores fractional numbers. Sufficient for storing 1
 
 8) What is a conditional statement in Java? Please show an example.
 
+Java has the following conditional statements:
+
+Use if       to specify a block of code to be executed, if a specified condition is true
+Use else     to specify a block of code to be executed, if the same condition is false
+Use else if  to specify a new condition to test, if the first condition is false
+Use switch   to specify many alternative blocks of code to be executed
+
+//example
 //syntax
 if (condition) {
   // block of code to be executed if the condition is true
@@ -72,31 +80,229 @@ if (x > y) {
 
 9) What types of loops do we have in Java? Please demonstrate each of them.
 
+Loops can execute a block of code as long as a specified condition is reached.
+Loops are handy because they save time, reduce errors, and they make code more readable.
+
+
+FOR LOOP
+When you know exactly how many times you want to loop through a block of code, use the for loop instead of a while loop:
+
+//syntax
+for (statement 1; statement 2; statement 3) {
+  // code block to be executed
+ }
+
+Statement 1 is executed (one time) before the execution of the code block.
+
+Statement 2 defines the condition for executing the code block.
+
+Statement 3 is executed (every time) after the code block has been executed.
+
+count = 0
+for (int i = 0; i < 10; i++){
+    System.out.println(i);
+}
+
+FOR EACH LOOP (ENHANCED FOR LOOP)
+There is also a "for-each" loop, which is used exclusively to loop through elements in an array:
+
+//syntax
+for (type variableName : arrayName) {
+  // code block to be executed
+}
+
+String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+for (String i : cars) {
+  System.out.println(i);
+}
+
+
+WHILE
+The while loop loops through a block of code as long as a specified condition is true:
+
+//Syntax
+while (condition) {
+  // code block to be executed
+}
+
+int i = 0;
+while (i < 5) {
+  System.out.println(i);
+  i++;
+}
+
+DO WHILE
+The do/while loop is a variant of the while loop. This loop will execute the code block once, before checking if the condition is true, then it will repeat the loop as long as the condition is true.
+
+//syntax
+do {
+  // code block to be executed
+}
+while (condition);
+
+int i = 0;
+do {
+  System.out.println(i);
+  i++;
+}
+while (i < 5);
+
+
 
 10) What do the keywords "continue", "break", and "return" do?
 
+Continue
+continue	Continues to the next iteration of a loop
+
+break	
+Breaks out of a loop or a switch block
+
+return
+return	Finished the execution of a method, and can be used to return a value from a method
+
+
 11) What is a Switch Statement? Please demonstrate.
 
+Use the switch statement to select one of many code blocks to be executed.
+
+switch(expression) {
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+
+This is how it works:
+
+The switch expression is evaluated once.
+The value of the expression is compared with the values of each case.
+If there is a match, the associated block of code is executed.
+The break and default keywords are optional, and will be described later in this chapter
+
+int day = 4;
+switch (day) {
+  case 1:
+    System.out.println("Monday");
+    break;
+  case 2:
+    System.out.println("Tuesday");
+    break;
+  case 3:
+    System.out.println("Wednesday");
+    break;
+  case 4:
+    System.out.println("Thursday");
+    break;
+  case 5:
+    System.out.println("Friday");
+    break;
+  case 6:
+    System.out.println("Saturday");
+    break;
+  case 7:
+    System.out.println("Sunday");
+    break;
+}
+// Outputs "Thursday" (day 4)
 
 Section 2 - Introduction to Data Structures:
 
 12) What is an Array?
 
+Arrays are used to store multiple values in a single variable, instead of declaring separate variables for each value.
+
+To declare an array, define the variable type with square brackets:
+
+//examples
+String[] cars;
+String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+int[] myNum = {10, 20, 30, 40};
+
+
 13) What is the difference between the length() of an Array and the final index of an Array?
+
+length() is the size of an array 
+final index is the size of an array - 1
+
+for example:
+length() = 5
+final index = 5 - 1 = 4
 
 14) How do we instantiate an Array of size 7? Please demonstrate.
 
+int intArray[];    //declaring array
+intArray = new int[20];  // allocating memory to array
+
+OR
+
+int[] intArray = new int[20]; // combining both statements in one
+
+int [] array = new int [7];
+
 15) Please write a for loop that will populate the Array you created above with the numbers two through twelve (start with 2 and increment by 2).
+
+int [] array = new int [7];
+
+for (int i = 0; i < array.length; i = i + 2){
+ System.out.println(i);
+}
 
 16) Please write a for-each loop that will print each element in the Array above.
 
+for(int x : array) {
+            System.out.println(x);
+        }
+
 17) How do we declare a two-dimensional Array with a width of 7 and a height of 7? Please demonstrate?
+
+A multidimensional array is an array containing one or more arrays.
+
+To create a two-dimensional array, add each array within its own set of curly braces:
+
+//example
+int[][] myNumbers = { {1, 2, 3, 4}, {5, 6, 7} };
+int x = myNumbers[1][2];
+System.out.println(x); // Outputs 7
 
 18) Please demonstrate how to populate the 2D array above using a nest for loop?
 
+We can also use a for loop inside another for loop to get the elements of a two-dimensional array (we still have to point to the two indexes):
+
+public class MyClass {
+  public static void main(String[] args) {
+    int[][] myNumbers = { {1, 2, 3, 4}, {5, 6, 7} };
+    for (int i = 0; i < myNumbers.length; ++i) {
+      for(int j = 0; j < myNumbers[i].length; ++j) {
+        System.out.println(myNumbers[i][j]);
+      }
+    }
+  }
+}
+
 19) Please demonstrate how to print each element in the 2D array above using nested for-each loop.
 
+int[][] array2d = {{1, 2, 3}, {4, 5, 6}};
+for (int[] array : array2d) {
+    for (int element : array) {
+        System.out.print(element + " ");
+    }
+    System.out.println();
+}
+
+OR
+
+int[][] numbers = {{1, 2, 3}, {4, 5, 6}};
+for (int[] array : numbers) {
+    System.out.println(Arrays.toString(array));
+}
+
 20) What is an ArrayList? 
+
+
 
 21) What makes an ArrayList different than an Array?
 
