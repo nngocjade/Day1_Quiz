@@ -690,6 +690,9 @@ The catch block must be used after the try block only. You can use multiple catc
 
 41) How do we create a custom exception? Please demonstrate.
 
+create a class w/ name 
+followed by the "extends" keyword before Exception
+
 class Exercise_7{
     public static void main(String[] args) throws SalonFullException {
        try{
@@ -724,50 +727,125 @@ class SalonFullException extends Exception{
 
 42) What does it mean to "throw" an exception?
 
+Java throw keyword is used to explicitly throw an exception.
 
 
 43) What is the difference between the keywords "throw" and "throws"?
 
+No.	                    throw	                                                                           throws
+
+1)	Java throw keyword is used to explicitly throw an exception.	                  Java throws keyword is used to declare an exception.
+2)	Checked exception cannot be propagated using throw only.	                      Checked exception can be propagated with throws.
+3)	Throw is followed by an instance.	                                             Throws is followed by class.
+4)	Throw is used within the method.	                                              Throws is used with the method signature.
+5)	You cannot throw multiple exceptions.	                                         You can declare multiple exceptions e.g.
+                                                                                  public void method()throws IOException,SQLException.
+
 44) When catching multiple exceptions, why must we keep the "exception hierarchy" in mind?
+
+
+
 
 45) Can we have a "try" without a "catch"?
 
+no
+
 46) Can we have a "try/catch" without a "finally"?
 
+yes
 
 Section 5 - Input/Output:
 
+Java I/O (Input and Output) is used to process the input and produce the output.
+Java uses the concept of a stream to make I/O operation fast. The java.io package contains all the classes required for input and output operations.
+
 47) What is a Byte Stream?
+
+Byte streams process data byte by byte (8 bits)
+
 
 48) What is a Character Stream?
 
+"The Java platform stores character values using Unicode conventions. Character stream I/O automatically translates this internal format to and from the local character set. Character stream automatically allows us to read/write data character by character.
+
 49) What is a very quickly clue that tells us whether we're looking at a Byte Stream or a Character Stream?
+
+byte stream                          inputstream and outputstream
+character stream                     Reader and Writer
+
 
 50) What is the difference between a Buffered Byte Stream and a traditional Byte Stream?
 
+A Buffered Byte Stream allows us to read a block of bytes or a collection of bytes at once. 
+Whereas with a traditional Byte Stream, we can only read (or write) one byte at a time. 
+Buffers are useful when we want to read (or write) a whole collection of bytes at once, rather than needing to read (or write) each byte individually.
+
+
 51) What is the difference between a Buffered Character Stream and a traditional Character Stream?
 
+
+
 52) Please demonstrate how to create a Byte Stream and a Character Stream below. Both of these Streams should demonstrate how to read a file and print the contents to the console. (This is just a demonstration.)
+
+
+
 
 
 Section 6 - MultiThreading:
 
 53) What is multithreading?
 
+Multithreading in Java is a process of executing multiple threads simultaneously.
+
+A THREAD is a lightweight sub-process, the smallest unit of processing. Multiprocessing and multithreading, both are used to achieve multitasking.
+However, we use multithreading than multiprocessing because threads use a shared memory area. They don't allocate separate memory area so saves memory, and context-switching between the threads takes less time than process.
+
+Advantages of Java Multithreading
+
+1) It doesn't block the user because threads are independent and you can perform multiple operations at the same time.
+2) You can perform many operations together, so it saves time.
+3) Threads are independent, so it doesn't affect other threads if an exception occurs in a single thread.
+
+
 54) What are the 2 ways we can create new threads in Java?
+
+Option #1 - Implementing the Runnable interface
+Option #2 - Extending the Thread Class
+
 
 55) Which method of creating a new thread do we typically prefer? Why?
 
+Option #1 - Implementing the Runnable interface
+
+
 56) What is the one method you must implement when creating a new thread?
+
+Runnable
+
 
 57) What does the join() method do?
 
+Java's Thread class provides an overloaded join() method which allows one thread to wait/pause/hold until another thread completes. 
+
+There are three overloaded join functions.
+
+join():                              It will put the current thread on hold until the thread on which it is called complete.
+
+join(long millis):                   It will put the current thread on hold until the thread on which it is called is complete - but it will only wait for as long                                        as you specify in milliseconds. If the thread does not complete in that time the current thread will move on without it.
+
+join(long millis, int nanos):        It will put the current thread on hold until the thread on which it is called is complete - but it will only wait for as long                                        as you specify in milliseconds + nanoseconds. If the thread does not complete in that time the current thread will move on                                           without it.
+
+
 58) What does the synchronized keyword do?
+
+We use synchronization to ensure that only one thread can access a specific resource at a given point of time. 
 
 
 Section 7 - Generics:
 
 59) Why do we use Generics?
+
+
 
 60) Please demonstrate a simple Generic Class definition.
 
