@@ -541,42 +541,190 @@ Java composition is achieved by using instance variables that refers to other ob
 
 30) What are the access modifiers in Java? Please list them and briefly describe them.
 
-Private: The access level of a private modifier is only within the class. It cannot be accessed from outside the class.
+PRIVATE: The access level of a private modifier is only within the class. It cannot be accessed from outside the class.
 
-Default: The access level of a default modifier is only within the package. It cannot be accessed from outside the package. If you do not specify any access level, it will be the default.
+DEFAULT: The access level of a default modifier is only within the package. It cannot be accessed from outside the package. If you do not specify any access level, it will be the default.
 
-Protected: The access level of a protected modifier is within the package and outside the package through child class. If you do not make the child class, it cannot be accessed from outside the package.
+PROTECTED: The access level of a protected modifier is within the package and outside the package through child class. If you do not make the child class, it cannot be accessed from outside the package.
 
-Public: The access level of a public modifier is everywhere. It can be accessed from within the class, outside the class, within the package and outside the package.
+PUBLIC: The access level of a public modifier is everywhere. It can be accessed from within the class, outside the class, within the package and outside the package.
+
+Access Modifier	    within class	       within package	      outside package by subclass only	              outside package
+    Private	              Y	                   N	                            N                                     	N
+Default                  	Y	                   Y	                            N	                                     N
+Protected	                Y	                   Y	                            Y	                                     N
+Public	                   Y	                   Y	                            Y	                                     Y
 
 31) What is the difference between "this" and "super"?
 
+"this" is a reference variable that refers to the CURRENT object.
+
+Here is given the 6 usage of java "this" keyword.
+
+this can be used to refer current class instance variable.
+this can be used to invoke current class method (implicitly)
+this() can be used to invoke current class constructor.
+this can be passed as an argument in the method call.
+this can be passed as argument in the constructor call.
+this can be used to return the current class instance from the method.
+
+-------
+
+"super" keyword in Java is a reference variable which is used to refer immediate parent class object.
+
+Usage of Java super Keyword
+
+super can be used to refer immediate parent class instance variable.
+super can be used to invoke immediate parent class method.
+super() can be used to invoke immediate parent class constructor.
 
 
 32) What is an "abstract" class?
 
+Abstract class: is a restricted class that cannot be used to create objects (to access it, it must be inherited from another class).
+
+
 33) What is the difference between a static variable and a non-static variable?
+
+Data abstraction is the process of hiding certain details and showing only essential information to the user.
+Abstraction can be achieved with either abstract classes or interfaces (which you will learn more about in the next chapter).
+
+The abstract keyword is a non-access modifier, used for classes and methods:
+
+ABSTRACT CLASS: is a restricted class that cannot be used to create objects (to access it, it must be inherited from another class).
+
+ABSTRACT METHOD: can only be used in an abstract class, and it does not have a body. The body is provided by the subclass (inherited from).
+An abstract class can have both abstract and regular methods:
 
 34) What is the difference between a static method and a non-static method?
 
+If you apply static keyword with any method, it is known as static method.
+
+A static method belongs to the class rather than the object of a class.
+A static method can be invoked without the need for creating an instance of a class.
+A static method can access static data member and can change the value of it.
+
+//syntax
+ClassName.variableName; 
+
+INTERESTING FACT:
+
+Why is the Java main method static?
+
+Ans) It is because the object is not required to call a static method. If it were a non-static method, JVM creates an object first then call main() method that will lead the problem of extra memory allocation.
+
+MAIN DIFFERENCE
+
+A static method belongs to the class itself 
+while a non-static method belongs to each instance of a class. 
+Therefore, a static method can be called directly without creating any instance of the class and an object is needed to call a non-static method.
+
 35) What do we need in order to be able to call a non-static method?
+
+an object is needed to call a non-static method
+
 
 36) How do we call a static method that is in another class?
 
+We can call the static method or a variable of class in another class by using class name itself.
+
+
 37) What does it mean to "overload" a method?
 
+With method overloading, multiple methods can have the same name with different parameters:
+
+int myMethod(int x)
+float myMethod(float x)
+double myMethod(double x, double y)
+
+
 38) What does it mean to "override" a method?
+
+Usage of Java Method Overriding
+
+Method overriding is used to provide the specific implementation of a method which is already provided by its superclass.
+Method overriding is used for runtime polymorphism
+
+
+Rules for Java Method Overriding
+
+The method must have the same name as in the parent class
+The method must have the same parameter as in the parent class.
+There must be an IS-A relationship (inheritance).
 
 
 Section 4 - Exception Handling:
 
 39) What is exception handling all about?
 
+The Exception Handling in Java is one of the powerful mechanism to handle the runtime errors so that normal flow of the application can be maintained.
+
+In Java, an exception is an event that disrupts the normal flow of the program. It is an object which is thrown at runtime.
+
+Exception Handling is a mechanism to handle runtime errors such as ClassNotFoundException, IOException, SQLException, RemoteException, etc.
+
+
 40) Please demonstrate a try/catch/finally statement below.
+
+Java try block is used to enclose the code that might throw an exception. It must be used within the method.
+
+If an exception occurs at the particular statement of try block, the rest of the block code will not execute. So, it is recommended not to keeping the code in try block that will not throw an exception.
+
+Java try block must be followed by either catch or finally block.
+
+//syntax     TRY CATCH
+try{    
+//code that may throw an exception    
+}catch(Exception_class_Name ref){}    
+
+//syntax     TRY FINALLY
+try{    
+//code that may throw an exception    
+}finally{}    
+
+
+Java catch block is used to handle the Exception by declaring the type of exception within the parameter. The declared exception must be the parent class exception ( i.e., Exception) or the generated exception type. However, the good approach is to declare the generated type of exception.
+
+The catch block must be used after the try block only. You can use multiple catch block with a single try block.
+
 
 41) How do we create a custom exception? Please demonstrate.
 
+class Exercise_7{
+    public static void main(String[] args) throws SalonFullException {
+       try{
+           addCustomerToSalon();
+       }catch (SalonFullException e){
+           System.out.println(e.toString());
+       }
+    }
+    public static void addCustomerToSalon() throws SalonFullException {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Hello, how can I help you?");
+        String response = scanner.nextLine();
+
+        if (response.equalsIgnoreCase("I would like to get in please")){
+            throw new SalonFullException();
+
+        }
+        System.out.println("Would you like to come back at another time?");
+        String response1 = scanner.next();
+
+        System.out.println("Great! You are schedule!");
+    }
+}
+
+class SalonFullException extends Exception{
+    @Override
+    public String toString() {
+        return "SalonFullException{Sorry, we are currently full}";
+    }
+}
+
 42) What does it mean to "throw" an exception?
+
+
 
 43) What is the difference between the keywords "throw" and "throws"?
 
