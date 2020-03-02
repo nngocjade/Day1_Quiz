@@ -916,7 +916,35 @@ Bonus Section!
 
 Please write a method that will reverse the (int) elements inside an array. This method takes in an int[] array as an argument and reverse the elements in place. You cannot create a new array and copy elements from one array to the other, you must reverse the elements in place inside the original array. Once reversed, return the array back to the caller.
 
+public class Exercise_06 {
+    public static void main(String[] args) {
+        int [] array = new int [5];
+
+        array [0] = 1;
+        array [1] = 2;
+        array [2] = 3;
+        array [3] = 4;
+        array [4] = 5;
+
+        //5 4 3 2 1
+       //temp = 2
+
+
+        //populate array
+        for (int i=0; i < array.length/2; i++){
+            int temp = array[i];
+            array[i] = array[array.length - 1 - i];
+            array[array.length - 1 - i] = temp;
+        }
+        System.out.print(Arrays.toString(array) + " ");
+    }
+
+}
+
 Please create a simple Rock-Paper_Scissors game that you can play on the console against the commputer. The computer must randomly choose it's play, and the user gets to manually choose their play. Best 2 out of 3 wins.
+
+
+
 
 
 Hooray!! You're extra extra done!
