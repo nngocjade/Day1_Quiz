@@ -488,11 +488,56 @@ class Car extends Vehicle {
 
 26) What is a constructor?
 
+Java Constructors
+A constructor in Java is a special method that is used to initialize objects. The constructor is called when an object of a class is created. It can be used to set initial values for object attributes:
+
+NOTE:
+
+Note that the constructor name must match the class name, and it cannot have a return type (like void).
+
+Also note that the constructor is called when the object is created.
+
+All classes have constructors by default: if you do not create a class constructor yourself, Java creates one for you. However, then you are not able to set initial values for object attributes.
+
+
+//EXAMPLE
+// Create a MyClass class
+public class MyClass {
+  int x;  // Create a class attribute
+
+  // Create a class constructor for the MyClass class
+  public MyClass() {
+    x = 5;  // Set the initial value for the class attribute x
+  }
+
+  public static void main(String[] args) {
+    MyClass myObj = new MyClass(); // Create an object of class MyClass (This will call the constructor)
+    System.out.println(myObj.x); // Print the value of x
+  }
+}
+
+// Outputs 5
+
 27) When, specifically, is a constructor invoked?
+
+when the object of class is created
+
 
 28) How do we create a new object in Java?
 
+In Java, the new keyword is used to create new objects. 
+
+Declaration      − A variable declaration with a variable name with an object type. 
+Instantiation    − The 'new' keyword is used to create the object. 
+Initialization   − The 'new' keyword is followed by a call to a constructor.
+
+
 29) What is Object Composition? Please give a simple demo below.
+
+Composition is the design technique to implement has-a relationship in classes. 
+We can use java inheritance or Object composition for code reuse.
+Java composition is achieved by using instance variables that refers to other objects.
+
 
 30) What are the access modifiers in Java? Please list them and briefly describe them.
 
