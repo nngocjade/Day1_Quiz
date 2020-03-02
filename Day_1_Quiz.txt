@@ -33,13 +33,45 @@ double - 64 bits or 8 bytes, stores fractional numbers. Sufficient for storing 1
 
 5) What are Java's arithmetic operators? Please demonstrate all of them.
 
++	Addition	 int i = 2 + 2; 	i == 2
+-	Subtraction	 int i = 4 - 2; 	i == 2
+*	Multiplication	 int i = 2 * 2; 	i == 4
+/	Division	int i = 4 /2;	i == 2
+%	Modulus	 int i = 5 % 3; 	i == 2
+
 6) What are Java's relational operators? Please demonstrate all of them.
+
+<	Less Than	 1 < 2 	True
+<=	Less Than or Equal To 	3 <= 3	True
+>	Greater Than	3 > 4	False
+>=	Greater Than or Equal To 	3 >= 3	True
+==	Equal To	 2 == 2	True
+ !=	Not Equal To 	 3 != 2	 True
 
 7) What are Java logical operators? Please demonstrate all of them?
 
+&	AND
+&&	Short-Circuit AND
+|	OR
+||	Short-Circuit OR
+^	 XOR (One can be true but not both) 
+ !	NOT 
+
 8) What is a conditional statement in Java? Please show an example.
 
+//syntax
+if (condition) {
+  // block of code to be executed if the condition is true
+}
+
+int x = 20;
+int y = 18;
+if (x > y) {
+  System.out.println("x is greater than y");
+}
+
 9) What types of loops do we have in Java? Please demonstrate each of them.
+
 
 10) What do the keywords "continue", "break", and "return" do?
 
