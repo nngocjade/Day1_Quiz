@@ -845,24 +845,68 @@ Section 7 - Generics:
 
 59) Why do we use Generics?
 
+The idea is to allow type (Integer, String, … etc and user defined types) to be a parameter to methods, classes and interfaces.
+
+"Generics could be used to develop a better solution using a container that can have a type assigned at instantiation, otherwise referred to as a generic type, allowing the creation of an object that can be used to store objects of the assigned type. A generic type is a class or interface that is parameterized over types, meaning that a type can be assigned by performing generic type invocation, which will replace the generic type with the assigned concrete type." 
 
 
 60) Please demonstrate a simple Generic Class definition.
 
+class GenericExample<T>{
+    private T num;
+    private T val;
+}
+
 60) Please demonstrate a simple Generic Method definition.
+
+ public static < E > void printArray( E inputArray ) {
+      /* Display array elements */
+      for(E element : inputArray) {
+         System.out.printf("%s ", element);
+      }
+      System.out.println();
+
 
 61) What does "bounded types" mean?
 
+There may be times when you want to restrict the types that can be used as type arguments in a parameterized type. For example, a method that operates on numbers might only want to accept instances of Number or its subclasses. This is what bounded type parameters are for.
+
+
+Declare a bounded type parameter
+
+List the type parameter’s name.
+Along by the extends keyword
+And by its upper bound.(which in below example is A.)
+
+//Syntax
+<T extends superClassName>
+
+
 62) Please write a simple bounded Generic Method named sum() that takes in two parameters. These parameters can be ANY type of Number, but they must be a Number. This method will return a double which is the sum of the two method parameters.
+
+public static<T extends Number> T sum(T x, T y){
+    Double dSum;
+    dSum = x.doubleValue() + y.doubleValue();
+    return (T) dSum;
+
+}
+
 
 62) What is an example of a Generic Class that we've already been using a bit in the prep course?
 
+ArrayList<>
 
 Section 8 - Enumerations:
 
 63) What is an Enumeration?
 
+Enumerations are fixed sets of closely related items
+
+
 64) When do we use Enumerations?
+
+Enums are used when we know all possible values at compile time. The very purpose of enum is to enforce compile time type safety.
+You should use enum types any time you need to represent a fixed set of constants.
 
 65) Please demonstrate a simple Enumeration below.
 
