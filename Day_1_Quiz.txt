@@ -6,11 +6,30 @@ Section 1 - Fundamentals:
 
 1) What defines "a block" of code?
 
+grouping of two or more statements
+enclosing the statements between opening and closing curly braces
+ logical unit that can be used any place that a single statement can
+
 2) What is "variable scope"?
+Scope refers to the visibility of variables. In other words, which parts of your program can see or use it
+Once defined, every part of your program can access a variable
+very useful to be able to limit a variable's scope to a single function
 
 3) What defines "variable scope"?
 
+In Java, the scope of a local variable is the body of the method in which it is declared.
+
 4) What are Java's primitive data types? Please list them and briefly explain them.
+
+boolean - 1 bit, stores true or false values
+byte - 8 bits or 1 byte, store whole number between -128 to 127
+int - 32 bits or 4 bytes, stores whole numbers from -2,147,483,648 to 2,147,483,647
+short - 16 bits or 2 bytes, stores whole numbers from -32,768 to 32,767
+char -  16 bits or 2 bytes, stores a single character/letter or ASCII values
+long -  64 bits or 8 bytes, stores whole numbers from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+float - 32 bits or 4 bytes, stores fractional numbers. Sufficient for storing 6 to 7 decimal digits
+double - 64 bits or 8 bytes, stores fractional numbers. Sufficient for storing 15 decimal digits
+
 
 5) What are Java's arithmetic operators? Please demonstrate all of them.
 
